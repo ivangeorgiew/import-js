@@ -8,13 +8,14 @@
   },
   "main": "build/main.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "babel lib --ignore ./lib/__tests__,./lib/__mocks__ --out-dir build",
     "clean": "rimraf build",
     "flow": "flow",
     "jest": "jest",
     "jest:cover": "jest --coverage",
     "lint": "eslint .",
-    "prepublish": "npm run clean && npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "preversion": "npm run clean && npm run build && npm test",
     "test": "npm run --silent lint && npm run --silent flow && npm run --silent jest",
     "test:cover": "npm run --silent lint && npm run --silent flow && npm run --silent jest:cover"
