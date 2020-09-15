@@ -1,6 +1,6 @@
 {
   "name": "import-js",
-  "version": "4.0.2",
+  "version": "4.0.1",
   "description": "Simplifies importing JavaScript modules",
   "bin": {
     "importjs": "./bin/importjs.js",
@@ -15,14 +15,14 @@
     "jest": "jest",
     "jest:cover": "jest --coverage",
     "lint": "eslint .",
-    "prepublishOnly": "npm run clean && npm run build",
-    "preversion": "npm run clean && npm run build && npm test",
-    "test": "npm run --silent lint && npm run --silent flow && npm run --silent jest",
-    "test:cover": "npm run --silent lint && npm run --silent flow && npm run --silent jest:cover"
+    "preversion": "pnpm i && pnpm run clean && pnpm run build && pnpm test && git add -A",
+    "postversion": "git push && pnpm publish",
+    "test": "pnpm run --silent lint && pnpm run --silent flow && pnpm run --silent jest",
+    "test:cover": "pnpm run --silent lint && pnpm run --silent flow && pnpm run --silent jest:cover"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/galooshi/import-js.git"
+    "url": "git+https://github.com/ivangeorgiew/import-js.git"
   },
   "keywords": [
     "es6",
@@ -32,19 +32,12 @@
     "typescript",
     "importing"
   ],
-  "author": "Henric Trotzig",
-  "contributors": [
-    {
-      "name": "Joe Lencioni",
-      "email": "joe.lencioni@gmail.com",
-      "url": "https://twitter.com/lencioni"
-    }
-  ],
+  "author": "Ivan Georgiev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/galooshi/import-js/issues"
+    "url": "https://github.com/ivangeorgiew/import-js/issues"
   },
-  "homepage": "https://github.com/galooshi/import-js#readme",
+  "homepage": "https://github.com/ivangeorgiew/import-js#readme",
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
